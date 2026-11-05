@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Inverso_20070401.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="15">
+            <Label Text="Algoritmo: Orden Inverso (A, B, C, D)" FontSize="18" FontAttributes="Bold" HorizontalOptions="Center" />
+
+            <Entry x:Name="entryA" Placeholder="Ingrese número A" Keyboard="Numeric" />
+            <Entry x:Name="entryB" Placeholder="Ingrese número B" Keyboard="Numeric" />
+            <Entry x:Name="entryC" Placeholder="Ingrese número C" Keyboard="Numeric" />
+            <Entry x:Name="entryD" Placeholder="Ingrese número D" Keyboard="Numeric" />
+
+            <Label x:Name="labelResultado" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center" TextColor="DarkBlue" />
+
+            <Button x:Name="btnProcesar" Text="Invertir y Guardar" Clicked="btnProcesar_Clicked" />
+
+            <ListView x:Name="listView" HasUnevenRows="True" ItemTapped="listView_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <VerticalStackLayout Padding="8">
+                                <Label Text="{Binding ResultadoInverso}" FontSize="16" FontAttributes="Bold"/>
+                                <HorizontalStackLayout Spacing="10">
+                                    <Label Text="{Binding A, StringFormat='A: {0}'}" FontSize="12"/>
+                                    <Label Text="{Binding B, StringFormat='B: {0}'}" FontSize="12"/>
+                                    <Label Text="{Binding C, StringFormat='C: {0}'}" FontSize="12"/>
+                                    <Label Text="{Binding D, StringFormat='D: {0}'}" FontSize="12"/>
+                                </HorizontalStackLayout>
+                            </VerticalStackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
